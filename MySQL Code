@@ -1,0 +1,44 @@
+use airplane;
+
+CREATE TABLE a_user (
+	userNo INTEGER primary key,
+    user_id varchar(50) not null,
+    user_pwd varchar(50) not null,
+    user_name varchar(50) not null,
+    -- user_ename varchar(50) not null,
+    user_tel varchar(50) not null,
+    user_email varchar(50) not null,
+    mileage INTEGER not null,
+    grade INTEGER not null
+);
+
+CREATE TABLE flight (
+	flightNo INTEGER primary key,
+    dep varchar(50) not null,
+    des varchar(50) not null,
+    depTime datetime not null,
+    desTime datetime not null,
+    fare INTEGER not null
+);
+
+CREATE TABLE reservation (
+	resno INTEGER primary key,
+    flightNo INTEGER not null,
+    userNo INTEGER not null,
+    resTime datetime not null,
+    psNum INTEGER,
+    foreign key (flightNo) references flight(flightNo),
+    foreign key (userNo) references a_user(userNo)
+);
+
+CREATE TABLE passenger (
+	resno INTEGER,
+    flightNo INTEGER,
+    psName varchar(50),
+    psTel varchar(50),
+    psEmail varchar(50),
+    seatno varchar(50),
+    foreign key (resno) references reservation(resno),
+    foreign key (flightNo) references reservation(flightNo)
+);
+
