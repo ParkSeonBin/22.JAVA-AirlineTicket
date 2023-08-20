@@ -33,7 +33,7 @@ Database - MySQL
 - 로그아웃 후 로그인 페이지로 되돌아감
   
 ## 🧾ERD
-
+![image](https://github.com/ParkSeonBin/22.JAVA-AirlineTicket/assets/95379549/6cd82e0f-67ee-4d87-9bf1-f7d59b287085)
 
 --- 
 #### 🔜향후 계획
