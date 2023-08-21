@@ -1,5 +1,5 @@
 # ✈️JAVA Project-Airline Ticket
-JAVA + MySQL - '항공권 예매 사이트'     
+JAVA + MySQL - '항공권 예매 프로그램'     
 
 ## 💻프로젝트 소개
 항공권 예매를 위한 항공사 프로그램입니다.
