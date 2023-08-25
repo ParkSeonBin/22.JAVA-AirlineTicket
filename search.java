@@ -25,9 +25,9 @@ import javax.swing.SwingConstants;
 public class search {
 	private JFrame frame;
 	
-	String header[] = {"항공편", "이름", "연락처", "이메일", "좌석"};
+	String header[] = {"예약 번호", "항공편","좌석"};
 	DefaultTableModel model;
-	Object ob[][] = new Object[0][5];
+	Object ob[][] = new Object[0][3];
 	
 	private Connection conn = DBconn.getConnection();
 	
@@ -72,7 +72,7 @@ public class search {
 		JButton back = new JButton("\uB3CC\uC544\uAC00\uAE30");
 		back.setFont(new Font("굴림", Font.PLAIN, 20));
 		frame.getContentPane().add(back, BorderLayout.SOUTH);
-		back.addActionListener(new ActionListener() { //회원가입 버튼을 누르면
+		back.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
@@ -92,14 +92,10 @@ public class search {
 			celAlignCenter.setHorizontalAlignment(JLabel.CENTER);
 			DefaultTableCellRenderer celAlignRight = new DefaultTableCellRenderer();
 			celAlignRight.setHorizontalAlignment(JLabel.RIGHT);
+			table.getColumn("예약 번호").setPreferredWidth(8);
+			table.getColumn("예약 번호").setCellRenderer(celAlignCenter);
 			table.getColumn("항공편").setPreferredWidth(8);
 			table.getColumn("항공편").setCellRenderer(celAlignCenter);
-			table.getColumn("이름").setPreferredWidth(8);
-			table.getColumn("이름").setCellRenderer(celAlignCenter);
-			table.getColumn("연락처").setPreferredWidth(8);
-			table.getColumn("연락처").setCellRenderer(celAlignCenter);
-			table.getColumn("이메일").setPreferredWidth(150);
-			table.getColumn("이메일").setCellRenderer(celAlignCenter);
 			table.getColumn("좌석").setPreferredWidth(150);
 			table.getColumn("좌석").setCellRenderer(celAlignCenter);
 			table.setRowHeight(27);
@@ -122,13 +118,11 @@ public class search {
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
+					int resNo = rs.getInt("resno");
 					int flightNo = rs.getInt("flightNo");
-					String psName = rs.getString("psName");
-					String psTel = rs.getString("psTel");
-					String psEmail = rs.getString("psEmail");
 					String seatno = rs.getString("seatno");
 					
-					Object data[] = {flightNo, psName, psTel, psEmail, seatno};
+					Object data[] = {resNo, flightNo,seatno};
 					model.addRow(data);
 				}
 			} catch (Exception e) {
