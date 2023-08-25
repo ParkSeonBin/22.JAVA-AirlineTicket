@@ -96,7 +96,7 @@ public class CustomFrame {
 		reservation.setHorizontalAlignment(SwingConstants.RIGHT);
 		reservation.setFont(new Font("굴림", Font.PLAIN, 18));
 		panel.add(reservation);
-		reservation.addActionListener(new ActionListener() {
+		reservation.addActionListener(new ActionListener() { //예약하기
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int flightNo = Integer.parseInt(JOptionPane.showInputDialog("항공편명을 입력하세요."));
@@ -123,24 +123,19 @@ public class CustomFrame {
 		    	} catch (SQLException e1) {
 		    		e1.printStackTrace();
 		    	}	
-		    	//여기
-		   		sql = "insert into passenger(resno, flightno, psName) values(?,?,?)";
-		   		try {
-		   			pstmt = conn.prepareStatement(sql);
-		    		pstmt.setInt(1, resno);
+		    	sql = "insert into passenger values(?,?,?)";
+		    	try {
+		    		pstmt = conn.prepareStatement(sql);
+		    		pstmt.setInt(1, resno); //중복되지 않아야 함
 		    		pstmt.setInt(2, flightNo);
-	    			pstmt.setString(3, "a");
-	   			
-	    			res2 = pstmt.executeUpdate();
-		   		} catch (SQLException e1) {
-		   			e1.printStackTrace();
-		   		}	
-		   		if(res2 > 0) {
-		    		System.out.println("입력 성공");
-		    	}
-			    //까지
+		    		pstmt.setString(3, "0");
+		    		
+		    		res1 = pstmt.executeUpdate();
+		    	} catch (SQLException e1) {
+		    		e1.printStackTrace();
+		    	}	
 		    	if(res1 > 0){
-	    			new passenger();
+	    			new seat();
 	    			frame.setVisible(false);
 		    	}
 			}
