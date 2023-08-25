@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -55,6 +56,14 @@ public class seat {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		int userno;
+		userDAO dao = new userDAO();
+		List<userVO> name = dao.getName(id);
+		for(int i=0; i<name.size(); i++) {
+			userVO vo = name.get(i);
+			userno=vo.getUser_no();
+		}
+		
 		frame = new JFrame();
 		frame.setTitle("\uC608\uC57D\uD558\uAE30");
 		frame.setBounds(100, 100, 800, 700);
@@ -87,6 +96,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -109,6 +119,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -131,6 +142,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -153,6 +165,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -175,6 +188,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -197,6 +211,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -219,6 +234,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		}); 
@@ -241,6 +257,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -263,6 +280,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -285,6 +303,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -307,6 +326,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -329,6 +349,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -351,6 +372,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -373,6 +395,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -395,6 +418,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -417,6 +441,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -439,6 +464,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -461,6 +487,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -483,6 +510,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -505,6 +533,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -527,6 +556,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -549,6 +579,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -571,6 +602,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -593,6 +625,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -615,6 +648,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -637,6 +671,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -659,6 +694,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -681,6 +717,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -703,6 +740,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
@@ -725,6 +763,7 @@ public class seat {
 			    if(res > 0){
 		            System.out.println("업데이트 완료");
 		            frame.setVisible(false);
+		            new CustomFrame();
 		        }
 			}
 		});
